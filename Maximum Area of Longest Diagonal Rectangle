@@ -1,0 +1,15 @@
+import math
+class Solution:
+    def areaOfMaxDiagonal(self, dimensions: List[List[int]]) -> int:
+        area = 0
+        le=0
+        for i,j in dimensions:
+            d = ((i)**2+(j)**2)**0.5
+            if d > le :
+                le = d
+                area = i*j
+            elif d == le:
+                le = max(le,d)
+                area = max(area,i*j)
+        return area
+            
