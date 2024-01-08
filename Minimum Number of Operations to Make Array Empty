@@ -1,0 +1,17 @@
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        d={}
+        c = 0
+        for i in nums:
+            if i in d:
+                d[i]+=1
+            else:
+                d[i]=1
+        print(d)
+        for i in d:
+            if d[i] == 1:
+                return -1
+            else:
+                if d[i]%3!=0:c+=(d[i]//3)+1
+                else:c+=d[i]//3
+        return c
