@@ -4,6 +4,7 @@ public:
         if (i==n){
             if (k==0){
                 main.push_back(ds);
+                return;
             }
             return;
         }
