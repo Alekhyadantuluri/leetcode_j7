@@ -1,22 +1,15 @@
 class Solution {
 public:
-    int mod = 1e9+7;
     long long largestPerimeter(vector<int>& nums) {
         sort(nums.begin(),nums.end());
-        long long sum = 0;
-        for(int i = 0 ; i < nums.size() ; i++){
-            sum += nums[i];
-        }
-        int i = nums.size()-1;
-        while(i>1){
-            if (sum-nums[i]<=nums[i]){
-                sum-=nums[i];
+        long long sum = 0 ;
+        long long ans = -1;
+        for(int i = 0 ; i < nums.size() ;i++){
+            if(i>1 && nums[i] < sum){
+                ans = nums[i]+sum;
             }
-            else{
-                return sum;
-            }
-            i-=1;
+            sum+=nums[i];
         }
-        return -1;
-        }
+        return ans;
+    }
 };
