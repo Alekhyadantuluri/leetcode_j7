@@ -14,8 +14,6 @@ class Solution:
                 power=power-tokens[i]
                 score+=1
                 i+=1
-            # elif i==j:
-            #     return score
             elif score!=0:
                 score-=1
                 power=power+tokens[j]
