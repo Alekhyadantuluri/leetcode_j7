@@ -1,9 +1,9 @@
 class Solution:
     def minimumLength(self, s: str) -> int:
-        k=len(s)
+        # k=len(s)
         i=0
-        j=k-1
-        mt=''
+        j=len(s)-1
+        # mt=''
         while(i<j):
             if s[i]==s[j]:
                 while(i+1<j and s[i]==s[i+1]):
